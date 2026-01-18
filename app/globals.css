@@ -1,6 +1,7 @@
 :root {
   --background: #0c0f0a;
-  --accent: #e3ff11;
+  --accent: #e2fe0e;
+  --accent2: #e2fe0e9a;
   --font: #e1e1e1;
 }
 
@@ -38,6 +39,15 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  font-family: var(--font-archivo-bold), sans-serif;
+}
+
+P {
+  font-family: var(--font-google-sans-code), sans-serif;
+  color: var(--font);
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -47,31 +57,121 @@ a {
 .mainContainer {
   display: flex;
   background-color: var(--background);
-  /* border: solid 1px var(--accent); */
-  border-radius: 0rem;
-
+  box-shadow: inset 0 0 15px 1px var(--accent);
   height: 100%;
-  animation: shadow 4s ease infinite;
 }
 
 .contentContainer {
   display: flex;
-  flex-direction: column;
-  padding: 5rem;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 3rem;
+  padding: 6rem;
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
 }
 
 .heading1 {
   font-size: 2rem;
-  color: #e3ff11;
+  color: var(--font);
   mix-blend-mode: difference;
+  padding-bottom: 2rem;
+  padding-right: 1rem;
 }
 
-@keyframes shadow {
-  0%,
-  100% {
-    box-shadow: inset 0 0 20px 30px var(--accent);
+.headingContainer {
+  /* background-color: red; */
+  width: auto;
+}
+.paragraphContainer {
+  max-width: 38rem;
+  /* background-color: blue; */
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  gap: 1.5rem;
+  min-width: 0;
+}
+.accent {
+  color: var(--accent);
+}
+
+.profileImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.35))
+    drop-shadow(0 0 18px rgba(0, 0, 0, 0.25));
+}
+
+.imageContainer {
+  width: clamp(14rem, 22vw, 18rem);
+  position: relative;
+  isolation: isolate;
+  margin-left: auto;
+}
+
+/* Soft colored background ("blob") behind the image */
+.imageContainer::before {
+  content: '';
+  position: absolute;
+  inset: -30%;
+  z-index: -1;
+
+  background: radial-gradient(
+      closest-side,
+      color-mix(in srgb, var(--accent) 55%, transparent) 0%,
+      transparent 70%
+    ),
+    radial-gradient(closest-side, rgba(255, 255, 255, 0.08) 0%, transparent 65%);
+
+  filter: blur(40px);
+  opacity: 0.9;
+}
+
+@media (max-width: 1000px) {
+  .contentContainer {
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1.5rem;
+    gap: 2.5rem;
   }
-  50% {
-    box-shadow: inset 0 0 40px 40px var(--accent);
+
+  .textContainer {
+    width: 100%;
+    max-width: 42rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .heading1 {
+    padding-right: 0;
+  }
+
+  .paragraphContainer {
+    max-width: 32rem;
+    text-align: justify;
+  }
+
+  .imageContainer {
+    margin-left: 0;
+    margin-right: 0;
+    margin-inline: auto;
+    width: min(18rem, 75vw);
   }
 }
+
+/* @keyframes shadow {
+  0%,
+  100% {
+    box-shadow: inset 0 0 20px 40px var(--accent2);
+  }
+  50% {
+    box-shadow: inset 0 0 30px 40px var(--accent2);
+  }
+} */
