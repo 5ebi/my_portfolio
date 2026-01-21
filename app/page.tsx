@@ -3,24 +3,40 @@ import Image from 'next/image';
 const projects = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
+    title: 'Psychotherapy Practice Website',
     description:
-      'Modern storefront with real-time inventory, Stripe payments, and admin dashboard',
-    tags: ['Next.js', 'TypeScript', 'Stripe', 'PostgreSQL'],
-    image: '/images/project1.jpg',
+      'A modern, fast, and SEO-focused website for a psychotherapy practice, designed to build trust and improve local visibility.',
+    tags: [
+      'Next.js',
+      'TypeScript',
+      'React',
+      'SEO',
+      'Responsive Design',
+      'Google Maps',
+    ],
+    image: '/images/psychotherapy-website.jpg',
     liveUrl: 'https://example.com',
-    codeUrl: 'https://github.com/yourusername/project1',
-    featured: true,
+    codeUrl: '',
+    featured: false,
   },
+
   {
     id: 2,
-    title: 'Task Management SaaS',
+    title: 'Paw Match',
     description:
-      'Team collaboration tool with drag-and-drop kanban boards and real-time sync',
-    tags: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
-    image: '/images/project2.jpg',
-    liveUrl: 'https://example.com',
-    codeUrl: 'https://github.com/yourusername/project2',
+      'Paw Match is a mobile app that helps dog owners discover and connect with compatible dogs nearby.',
+    tags: [
+      'React Native',
+      'Expo',
+      'TypeScript',
+      'Node.js',
+      'PostgreSQL',
+      'REST API',
+      'Zod',
+    ],
+    image: '/images/paw-match.jpg',
+    liveUrl: '',
+    codeUrl: 'https://github.com/5ebi/finalproject-fall-2024-atvie',
     featured: false,
   },
   {
@@ -40,23 +56,39 @@ export default function Home() {
   return (
     <div className="mainContainer">
       <div className="contentContainer">
-        <div className="textContainer">
-          <div className="headingContainer">
-            <h1 className="heading1">
-              Sebastian Speiser <br />
-              <span className="accent">{'// web developer'}</span>
-            </h1>
+        <section className="heroSection">
+          <div className="textContainer">
+            <div className="headingContainer">
+              <h1 className="heading1">
+                Sebastian Speiser <br />
+                <span className="accent">{'// web developer'}</span>
+              </h1>
+            </div>
+            <div className="paragraphContainer">
+              <p>
+                I’m a frontend developer with a strong focus on clean UI,
+                usability, and modern web technologies. I enjoy turning complex
+                ideas into simple, intuitive digital experiences. I work mainly
+                with React, Next.js, and TypeScript, and I like understanding
+                things deeply rather than just making them work. Curious,
+                reliable, and driven to improve with every project.
+              </p>
+            </div>
           </div>
-          <div className="paragraphContainer">
-            <p>
-              I’m a frontend developer with a strong focus on clean UI,
-              usability, and modern web technologies. I enjoy turning complex
-              ideas into simple, intuitive digital experiences. I work mainly
-              with React, Next.js, and TypeScript, and I like understanding
-              things deeply rather than just making them work. Curious,
-              reliable, and driven to improve with every project.
-            </p>
+
+          <div className="imageContainer">
+            <Image
+              src="/images/profile_small.webp"
+              alt="Profile Picture of Sebastian Speiser"
+              height={2166}
+              width={1455}
+              loading="eager"
+              className="profileImage"
+            />
           </div>
+        </section>
+
+        <section className="projectsSection">
           <h2 className="subheading">Featured Work</h2>
           <hr className="divider" />
 
@@ -125,16 +157,7 @@ export default function Home() {
               </article>
             ))}
           </div>
-        </div>
-        <div className="imageContainer">
-          <Image
-            src="/images/profile_small.webp"
-            alt="Profile Picture of Sebastian Speiser"
-            height={2166}
-            width={1455}
-            className="profileImage"
-          />
-        </div>
+        </section>
       </div>
     </div>
   );
