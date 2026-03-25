@@ -31,7 +31,7 @@ export default function Hero() {
                 priority
               />
             </div>
-            <p className="heroRole">Frontend Developer &mdash; Austria</p>
+            <p className="heroRole">Frontend Developer</p>
             <p className="heroDesc">{t.hero.subtitle[lang]}</p>
 
             <div className="heroCtas">

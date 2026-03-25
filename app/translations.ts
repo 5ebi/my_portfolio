@@ -9,8 +9,8 @@ export const t = {
   hero: {
     status: { en: 'Open for projects', de: 'Offen für Projekte' },
     subtitle: {
-      en: 'I design and build digital products that feel right. Clean interfaces, sharp code, no fluff. From concept to deploy — I craft experiences that work as good as they look.',
-      de: 'Ich designe und baue digitale Produkte, die sich richtig anfühlen. Klare Interfaces, sauberer Code, kein Überfluss. Vom Konzept bis zum Deploy — ich schaffe Erlebnisse, die so gut funktionieren wie sie aussehen.',
+      en: 'Based in Vienna. I design and build digital products that feel right. Clean interfaces, sharp code, no fluff. From concept to deploy — I craft experiences that work as good as they look.',
+      de: 'Aus Wien. Ich designe und baue digitale Produkte, die sich richtig anfühlen. Klare Interfaces, sauberer Code, kein Überfluss. Vom Konzept bis zum Deploy — ich schaffe Erlebnisse, die so gut funktionieren wie sie aussehen.',
     },
     cta: { en: 'Start a project', de: 'Projekt starten' },
     work: { en: 'See the work', de: 'Arbeiten ansehen' },
