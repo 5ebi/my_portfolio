@@ -2,50 +2,50 @@ export type Lang = 'en' | 'de';
 
 export const t = {
   nav: {
-    projects: { en: 'Projects', de: 'Projekte' },
+    projects: { en: 'Work', de: 'Projekte' },
     stack: { en: 'Stack', de: 'Stack' },
     contact: { en: 'Contact', de: 'Kontakt' },
   },
   hero: {
-    status: { en: 'Available for work', de: 'Verfügbar für Projekte' },
+    status: { en: 'Open for projects', de: 'Offen für Projekte' },
     subtitle: {
-      en: "I'm a frontend developer with a strong focus on clean UI, usability, and modern web technologies. I enjoy turning complex ideas into simple, intuitive digital experiences.",
-      de: 'Ich bin Frontend-Entwickler mit starkem Fokus auf saubere UI, Benutzerfreundlichkeit und moderne Web-Technologien. Ich verwandle komplexe Ideen gerne in einfache, intuitive digitale Erlebnisse.',
+      en: 'I design and build digital products that feel right. Clean interfaces, sharp code, no fluff. From concept to deploy — I craft experiences that work as good as they look.',
+      de: 'Ich designe und baue digitale Produkte, die sich richtig anfühlen. Klare Interfaces, sauberer Code, kein Überfluss. Vom Konzept bis zum Deploy — ich schaffe Erlebnisse, die so gut funktionieren wie sie aussehen.',
     },
-    cta: { en: 'Get in touch', de: 'Kontakt aufnehmen' },
-    work: { en: 'View work', de: 'Projekte ansehen' },
+    cta: { en: 'Start a project', de: 'Projekt starten' },
+    work: { en: 'See the work', de: 'Arbeiten ansehen' },
   },
   projects: {
     label: { en: 'Selected Work', de: 'Ausgewählte Arbeiten' },
-    viewLive: { en: 'View live', de: 'Live ansehen' },
+    viewLive: { en: 'Visit', de: 'Ansehen' },
     source: { en: 'Source', de: 'Quellcode' },
     comingSoon: { en: 'Coming soon', de: 'Demnächst' },
   },
   stack: {
-    label: { en: 'Technical Proficiencies', de: 'Technische Fähigkeiten' },
+    label: { en: 'Tools & Technologies', de: 'Tools & Technologien' },
   },
   contact: {
-    label: { en: 'Initiate Collaboration', de: 'Zusammenarbeit starten' },
+    label: { en: "What's next?", de: 'Was kommt als Nächstes?' },
     heading: {
-      en: "Let's build something great together.",
-      de: 'Lass uns gemeinsam etwas Großartiges bauen.',
+      en: "Got an idea? Let's make it real.",
+      de: 'Eine Idee? Lass sie uns umsetzen.',
     },
     subtitle: {
-      en: 'Currently accepting new projects and collaborations.',
-      de: 'Aktuell offen für neue Projekte und Zusammenarbeit.',
+      en: "I'm always interested in new projects, collaborations, and ambitious ideas. Let's talk.",
+      de: 'Ich bin immer offen für neue Projekte, Kollaborationen und ambitionierte Ideen. Lass uns reden.',
     },
-    btn: { en: 'Send message', de: 'Nachricht senden' },
+    btn: { en: 'Say hello', de: 'Sag hallo' },
   },
   footer: {
-    copy: { en: 'Designed for performance', de: 'Designed für Performance' },
+    copy: { en: 'Built with precision', de: 'Gebaut mit Präzision' },
   },
   projectData: [
     {
       id: 1,
       title: { en: 'Psychotherapy Practice', de: 'Psychotherapie Praxis' },
       description: {
-        en: 'Modern, fast, and SEO-focused website designed to build trust and improve local visibility.',
-        de: 'Moderne, schnelle und SEO-fokussierte Webseite, die Vertrauen aufbaut und lokale Sichtbarkeit verbessert.',
+        en: 'A calming, trust-building web presence for a psychotherapy practice. Fast, accessible, and optimized to rank locally.',
+        de: 'Eine beruhigende, vertrauensbildende Webpräsenz für eine Psychotherapie-Praxis. Schnell, barrierefrei und lokal optimiert.',
       },
       tags: ['Next.js', 'TypeScript', 'React', 'SEO'],
       liveUrl: 'https://psychotherapie-rusch.at',
@@ -56,8 +56,8 @@ export const t = {
       id: 2,
       title: { en: 'Paw Match', de: 'Paw Match' },
       description: {
-        en: 'Mobile app that helps dog owners discover and connect with compatible dogs nearby.',
-        de: 'Mobile App, die Hundebesitzern hilft, kompatible Hunde in der Nähe zu finden.',
+        en: 'A mobile app connecting dog owners with compatible matches nearby. Swipe, match, meet.',
+        de: 'Eine Mobile App, die Hundebesitzer mit passenden Matches in der Nähe verbindet. Swipen, matchen, treffen.',
       },
       tags: ['React Native', 'Expo', 'TypeScript', 'Node.js', 'PostgreSQL'],
       liveUrl: '',
@@ -68,8 +68,8 @@ export const t = {
       id: 3,
       title: { en: 'whyem', de: 'whyem' },
       description: {
-        en: 'AI-powered content platform with custom templates and SEO optimization tools.',
-        de: 'KI-gestützte Content-Plattform mit individuellen Vorlagen und SEO-Optimierungstools.',
+        en: 'AI-powered content platform. Custom templates, smart SEO tools, and a workflow that actually makes sense.',
+        de: 'KI-gestützte Content-Plattform. Individuelle Vorlagen, smarte SEO-Tools und ein Workflow, der wirklich Sinn macht.',
       },
       tags: ['Next.js', 'OpenAI', 'TailwindCSS'],
       liveUrl: 'https://whyem.com',

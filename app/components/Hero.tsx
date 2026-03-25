@@ -18,17 +18,20 @@ export default function Hero() {
             </div>
 
             <div className="heroNameRow">
-              <h1 className="heroName">Sebastian Speiser</h1>
               <Image
                 src="/images/profile.webp"
                 alt="Sebastian Speiser"
-                width={56}
-                height={56}
+                width={80}
+                height={80}
                 className="heroAvatar"
                 priority
               />
+              <div>
+                <h1 className="heroName">Sebastian</h1>
+                <h1 className="heroName">Speiser</h1>
+              </div>
             </div>
-            <p className="heroRole">Frontend Developer</p>
+            <p className="heroRole">Frontend Developer &mdash; Austria</p>
             <p className="heroDesc">{t.hero.subtitle[lang]}</p>
 
             <div className="heroCtas">
@@ -62,22 +65,18 @@ export default function Hero() {
             </div>
             <div className="codeLine">
               <span className="codeLineNum">3</span>
-              <span>  <span className="codeProperty">role</span><span className="codePunctuation">:</span> <span className="codeString">&quot;Frontend Developer&quot;</span><span className="codePunctuation">,</span></span>
+              <span>  <span className="codeProperty">focus</span><span className="codePunctuation">:</span> <span className="codeString">&quot;interfaces that feel right&quot;</span><span className="codePunctuation">,</span></span>
             </div>
             <div className="codeLine">
               <span className="codeLineNum">4</span>
-              <span>  <span className="codeProperty">location</span><span className="codePunctuation">:</span> <span className="codeString">&quot;Austria&quot;</span><span className="codePunctuation">,</span></span>
+              <span>  <span className="codeProperty">stack</span><span className="codePunctuation">:</span> <span className="codePunctuation">[</span><span className="codeString">&quot;React&quot;</span><span className="codePunctuation">,</span> <span className="codeString">&quot;Next.js&quot;</span><span className="codePunctuation">,</span> <span className="codeString">&quot;TypeScript&quot;</span><span className="codePunctuation">,</span> <span className="codeString">&quot;Expo&quot;</span><span className="codePunctuation">]</span><span className="codePunctuation">,</span></span>
             </div>
             <div className="codeLine">
               <span className="codeLineNum">5</span>
-              <span>  <span className="codeProperty">skills</span><span className="codePunctuation">:</span> <span className="codePunctuation">[</span><span className="codeString">&quot;React&quot;</span><span className="codePunctuation">,</span> <span className="codeString">&quot;Next.js&quot;</span><span className="codePunctuation">,</span> <span className="codeString">&quot;TypeScript&quot;</span><span className="codePunctuation">,</span> <span className="codeString">&quot;React Native&quot;</span><span className="codePunctuation">]</span><span className="codePunctuation">,</span></span>
-            </div>
-            <div className="codeLine">
-              <span className="codeLineNum">6</span>
               <span>  <span className="codeProperty">available</span><span className="codePunctuation">:</span> <span className="codeNumber">true</span><span className="codePunctuation">,</span></span>
             </div>
             <div className="codeLine">
-              <span className="codeLineNum">7</span>
+              <span className="codeLineNum">6</span>
               <span><span className="codePunctuation">{'}'}</span><span className="codePunctuation">;</span><span className="codeCursor" /></span>
             </div>
           </div>
