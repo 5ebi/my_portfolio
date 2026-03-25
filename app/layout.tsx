@@ -1,16 +1,20 @@
 import type { Metadata } from 'next';
-import { Google_Sans_Code } from 'next/font/google';
 import './globals.css';
 import localFont from 'next/font/local';
 
-const google_Sans_Code = Google_Sans_Code({
-  variable: '--font-google-sans-code',
-  subsets: ['latin'],
-});
-
-const myLocalFont = localFont({
+const archivoBold = localFont({
   src: '../public/fonts/Archivo-Bold.woff2',
   variable: '--font-archivo-bold',
+});
+
+const archivoMedium = localFont({
+  src: '../public/fonts/Archivo-Medium.woff2',
+  variable: '--font-archivo-medium',
+});
+
+const archivoRegular = localFont({
+  src: '../public/fonts/Archivo-Regular.woff2',
+  variable: '--font-archivo-regular',
 });
 
 export const metadata: Metadata = {
@@ -55,8 +59,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        style={{ backgroundColor: 'var(--accent)' }}
-        className={`${google_Sans_Code.variable} ${myLocalFont.variable}`}
+        className={`${archivoBold.variable} ${archivoMedium.variable} ${archivoRegular.variable}`}
       >
         {children}
       </body>

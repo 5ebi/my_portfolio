@@ -1,4 +1,8 @@
-import Image from 'next/image';
+import Navigation from './components/Navigation';
+import HeroCodeBlock from './components/HeroCodeBlock';
+import ProjectCard from './components/ProjectCard';
+import Footer from './components/Footer';
+import ScrollReveal from './components/ScrollReveal';
 
 const projects = [
   {
@@ -17,14 +21,12 @@ const projects = [
     image: '/images/psychotherapy-website.jpg',
     liveUrl: 'https://psychtherapie-rusch.at',
     codeUrl: '',
-    featured: false,
   },
-
   {
     id: 2,
     title: 'Paw Match',
     description:
-      'Paw Match is a mobile app that helps dog owners discover and connect with compatible dogs nearby.',
+      'A mobile app that helps dog owners discover and connect with compatible dogs nearby.',
     tags: [
       'React Native',
       'Expo',
@@ -37,136 +39,50 @@ const projects = [
     image: '/images/paw-match.jpg',
     liveUrl: '',
     codeUrl: 'https://github.com/5ebi/finalproject-fall-2024-atvie',
-    featured: false,
   },
   {
     id: 3,
     title: 'AI Content Generator',
     description:
-      'GPT-powered content assistant with custom templates and SEO optimization',
+      'GPT-powered content assistant with custom templates and SEO optimization.',
     tags: ['Next.js', 'OpenAI', 'TailwindCSS'],
     image: '/images/project3.jpg',
     liveUrl: 'https://whyem.com',
     codeUrl: 'https://github.com/yourusername/project3',
-    featured: false,
   },
 ];
 
 export default function Home() {
   return (
-    <div className="mainContainer">
-      <div className="contentContainer">
-        <section className="heroSection">
-          <div className="textContainer">
-            <div className="headingContainer">
-              <h1 className="heading1">
-                Sebastian Speiser <br />
-                <span className="accent">{'// web developer'}</span>
-              </h1>
-            </div>
-            <div className="paragraphContainer">
-              <p>
-                I’m a frontend developer with a strong focus on clean UI,
-                usability, and modern web technologies. I enjoy turning complex
-                ideas into simple, intuitive digital experiences. I work mainly
-                with React, Next.js, and TypeScript, and I like understanding
-                things deeply rather than just making them work. Curious,
-                reliable, and driven to improve with every project.
-              </p>
-            </div>
-          </div>
+    <>
+      <Navigation />
 
-          <div className="imageContainer">
-            <Image
-              src="/images/profile_small.webp"
-              alt="Profile Picture of Sebastian Speiser"
-              height={2166}
-              width={1455}
-              loading="eager"
-              className="profileImage"
-            />
-          </div>
-        </section>
+      <main>
+        <HeroCodeBlock />
 
-        <section className="projectsSection">
-          <h2 className="subheading">Featured Work</h2>
-          <hr className="divider" />
+        <section className="projects" id="projects">
+          <ScrollReveal>
+            <div className="sectionHeader">
+              <div className="sectionTitle">
+                {'// featured_work'}
+              </div>
+              <h2 className="sectionHeading">Things I&apos;ve Built</h2>
+            </div>
+          </ScrollReveal>
 
           <div className="projectsGrid">
             {projects.map((project) => (
-              <article
-                key={project.id}
-                className={`projectCard ${project.featured ? 'featured' : ''}`}
-              >
-                <div className="browserMockup">
-                  <div className="browserBar">
-                    <div className="browserDots">
-                      <span className="dot red"></span>
-                      <span className="dot yellow"></span>
-                      <span className="dot green"></span>
-                    </div>
-                    <div className="browserUrl">
-                      <span className="urlIcon">🔒</span>
-                      <span className="urlText">
-                        {project.liveUrl.replace('https://', '')}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="projectImageWrapper">
-                    <div className="projectImagePlaceholder">
-                      <span className="placeholderText">
-                        Project Screenshot
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="projectContent">
-                  <h3 className="projectTitle">{project.title}</h3>
-                  <p className="projectDescription">{project.description}</p>
-
-                  <div className="projectTags">
-                    {project.tags.map((tag) => (
-                      <span key={tag} className="tag">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="projectLinks">
-                    {project.liveUrl ? (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="projectLink primary"
-                      >
-                        <span>View Live</span>
-                        <span className="arrow">→</span>
-                      </a>
-                    ) : (
-                      <span className="projectLink primary comingSoon">
-                        <span>Coming Soon</span>
-                      </span>
-                    )}
-                    {project.codeUrl && (
-                      <a
-                        href={project.codeUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="projectLink secondary"
-                      >
-                        <span>Source</span>
-                        <span className="codeIcon">{'</>'}</span>
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </article>
+              <ScrollReveal key={project.id}>
+                <ProjectCard project={project} />
+              </ScrollReveal>
             ))}
           </div>
         </section>
-      </div>
-    </div>
+
+        <ScrollReveal>
+          <Footer />
+        </ScrollReveal>
+      </main>
+    </>
   );
 }
