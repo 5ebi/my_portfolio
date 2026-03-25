@@ -1,22 +1,27 @@
+'use client';
+
+import { useTheme } from './ThemeProvider';
+import { translations } from '../translations';
+
 export default function Footer() {
+  const { lang } = useTheme();
+  const t = translations.footer;
+
   return (
     <footer className="footer" id="contact">
       <div className="ctaSection">
         <div className="ctaInner">
-          <span className="sectionLabel">[ DEPLOYMENT_READY ]</span>
+          <span className="sectionLabel">{t.sectionLabel[lang]}</span>
           <h2 className="ctaHeading">
-            READY TO BUILD
+            {t.heading1[lang]}
             <br />
-            SOMETHING GREAT?
+            {t.heading2[lang]}
           </h2>
-          <p className="ctaDescription">
-            Currently accepting new projects and collaborations.
-            Let&apos;s build something that works beautifully.
-          </p>
+          <p className="ctaDescription">{t.description[lang]}</p>
 
           <div className="ctaActions">
             <a href="mailto:work@sebastianspeiser.com" className="btnPrimary">
-              ESTABLISH_CONNECTION
+              {t.btnContact[lang]}
             </a>
             <a
               href="https://github.com/5ebi"
@@ -24,7 +29,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="btnSecondary"
             >
-              VIEW_GITHUB
+              {t.btnGithub[lang]}
             </a>
           </div>
         </div>
@@ -33,7 +38,7 @@ export default function Footer() {
       <div className="footerBottom">
         <div className="footerBottomInner">
           <span className="footerCopy">
-            &copy; {new Date().getFullYear()} SEBASTIAN_SPEISER // ALL_RIGHTS_RESERVED
+            &copy; {new Date().getFullYear()} SEBASTIAN_SPEISER // {t.copyright[lang]}
           </span>
           <div className="footerLinks">
             <a
@@ -50,7 +55,7 @@ export default function Footer() {
           </div>
           <span className="footerStatus">
             <span className="statusDot" />
-            SYSTEM_STABLE
+            {t.systemStable[lang]}
           </span>
         </div>
       </div>

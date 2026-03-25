@@ -1,13 +1,20 @@
+'use client';
+
 import Image from 'next/image';
+import { useTheme } from './ThemeProvider';
+import { translations } from '../translations';
 
 export default function HeroCodeBlock() {
+  const { lang } = useTheme();
+  const t = translations.hero;
+
   return (
     <section className="hero" id="hero">
       <div className="heroInner">
         <div className="heroContent">
           <div className="heroStatus">
             <span className="statusDot" />
-            <span className="statusText">STATUS: OPEN_FOR_COLLABORATION</span>
+            <span className="statusText">{t.status[lang]}</span>
           </div>
 
           <h1 className="heroName">
@@ -17,18 +24,17 @@ export default function HeroCodeBlock() {
           </h1>
 
           <p className="heroDescription">
-            Frontend developer specializing in{' '}
-            <strong>clean, high-performance interfaces</strong> and modern web
-            technologies. Building digital infrastructure that prioritizes
-            usability over complexity.
+            {t.description[lang]}
+            <strong>{t.descriptionStrong[lang]}</strong>
+            {t.descriptionEnd[lang]}
           </p>
 
           <div className="heroActions">
             <a href="#contact" className="btnPrimary">
-              INITIALIZE_CONTACT
+              {t.btnContact[lang]}
             </a>
             <a href="#projects" className="btnSecondary">
-              VIEW_PROJECTS
+              {t.btnProjects[lang]}
             </a>
           </div>
         </div>
@@ -46,7 +52,7 @@ export default function HeroCodeBlock() {
           </div>
           <div className="heroBadge">
             <span className="heroBadgeNumber">03+</span>
-            <span className="heroBadgeLabel">YEARS_EXP</span>
+            <span className="heroBadgeLabel">{t.yearsExp[lang]}</span>
           </div>
         </div>
       </div>

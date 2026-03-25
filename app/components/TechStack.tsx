@@ -1,4 +1,12 @@
+'use client';
+
+import { useTheme } from './ThemeProvider';
+import { translations } from '../translations';
+
 export default function TechStack() {
+  const { lang } = useTheme();
+  const t = translations.stack;
+
   const skills = [
     { name: 'REACT / NEXT.JS', level: 90, category: 'FRONTEND' },
     { name: 'TYPESCRIPT', level: 88, category: 'FRONTEND' },
@@ -12,16 +20,13 @@ export default function TechStack() {
     <section className="stack" id="stack">
       <div className="stackInner">
         <div className="stackHeader">
-          <span className="sectionLabel">[ TECH_CAPABILITIES ]</span>
+          <span className="sectionLabel">{t.sectionLabel[lang]}</span>
           <h2 className="sectionHeading">
-            ENGINEERING
+            {t.heading1[lang]}
             <br />
-            STACK
+            {t.heading2[lang]}
           </h2>
-          <p className="stackDescription">
-            A focused selection of technologies optimized for performance,
-            developer experience, and shipping fast.
-          </p>
+          <p className="stackDescription">{t.description[lang]}</p>
         </div>
 
         <div className="stackGrid">

@@ -1,30 +1,38 @@
+'use client';
+
+import { useTheme } from './ThemeProvider';
+import { translations } from '../translations';
+import type { Lang } from '../translations';
+
 interface Project {
   id: number;
-  title: string;
-  description: string;
-  tags: string[];
+  title: Readonly<Record<Lang, string>>;
+  description: Readonly<Record<Lang, string>>;
+  tags: readonly string[];
   image: string;
   liveUrl: string;
   codeUrl: string;
-  category: string;
+  category: Readonly<Record<Lang, string>>;
 }
 
 export default function ProjectCard({ project, index }: { project: Project; index: number }) {
-  const displayTitle = project.title.toUpperCase().replace(/ /g, '_');
+  const { lang } = useTheme();
+  const t = translations.projectCard;
+  const displayTitle = project.title[lang].toUpperCase().replace(/ /g, '_');
   const num = String(index + 1).padStart(2, '0');
 
   return (
     <article className="projectCard">
       <div className="projectCardInner">
         <div className="projectMeta">
-          <span className="projectCategory">[ {project.category} ]</span>
+          <span className="projectCategory">[ {project.category[lang]} ]</span>
           {project.liveUrl && (
             <a
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="projectExternalLink"
-              aria-label={`Visit ${project.title}`}
+              aria-label={`Visit ${project.title[lang]}`}
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M7 17L17 7M17 7H7M17 7v10" />
@@ -49,7 +57,7 @@ export default function ProjectCard({ project, index }: { project: Project; inde
           </div>
 
           <h3 className="projectTitle">{displayTitle}</h3>
-          <p className="projectDescription">{project.description}</p>
+          <p className="projectDescription">{project.description[lang]}</p>
 
           <div className="projectActions">
             {project.liveUrl ? (
@@ -59,14 +67,14 @@ export default function ProjectCard({ project, index }: { project: Project; inde
                 rel="noopener noreferrer"
                 className="projectAction projectActionPrimary"
               >
-                VIEW_LIVE
+                {t.viewLive[lang]}
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <path d="M7 17L17 7M17 7H7M17 7v10" />
                 </svg>
               </a>
             ) : (
               <span className="projectAction projectActionDisabled">
-                COMING_SOON
+                {t.comingSoon[lang]}
               </span>
             )}
             {project.codeUrl && (
@@ -76,7 +84,7 @@ export default function ProjectCard({ project, index }: { project: Project; inde
                 rel="noopener noreferrer"
                 className="projectAction projectActionSecondary"
               >
-                SOURCE_CODE
+                {t.sourceCode[lang]}
               </a>
             )}
           </div>
