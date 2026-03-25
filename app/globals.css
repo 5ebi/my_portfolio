@@ -1,16 +1,8 @@
 :root {
-  --background: #1d1d1d;
-  --accent: #e2fe0e;
-  --accent2: #e2fe0e67;
-  --font: #e1e1e1;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: #e1e1e1;
-    --accent: #060626;
-    --font: #060626;
-  }
+  --background: #f4f3f0;
+  --accent: #177a45;
+  --accent2: #177a4566;
+  --font: #1c1c1c;
 }
 
 html,
@@ -49,11 +41,6 @@ P {
   color: var(--font);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
 
 .mainContainer {
   display: flex;
@@ -101,8 +88,7 @@ P {
 
 .heading1 {
   font-size: 2rem;
-  color: var(--font);
-  mix-blend-mode: difference;
+  color: var(--accent);
   padding-bottom: 2rem;
   padding-right: 1rem;
 }
@@ -176,6 +162,7 @@ P {
   padding-top: 5rem;
   font-size: 1.2rem;
   font-family: var(--font-google-sans-code);
+  color: var(--accent);
 }
 
 .divider {
@@ -197,8 +184,8 @@ P {
 
 .projectCard {
   position: relative;
-  background: color-mix(in srgb, var(--font) 2%, transparent);
-  border: 1px solid color-mix(in srgb, var(--accent) 15%, transparent);
+  background: #ffffff;
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
   border-radius: 1rem;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -207,11 +194,11 @@ P {
 
 .projectCard:hover {
   transform: translateY(-8px);
-  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 55%, transparent);
   box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.4),
-    0 0 0 1px color-mix(in srgb, var(--accent) 25%, transparent),
-    inset 0 0 60px color-mix(in srgb, var(--accent) 8%, transparent);
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    0 0 0 1px color-mix(in srgb, var(--accent) 30%, transparent),
+    inset 0 0 60px color-mix(in srgb, var(--accent) 5%, transparent);
 }
 
 .projectCard.featured {
@@ -332,7 +319,7 @@ P {
 .projectTitle {
   font-size: 1.25rem;
   font-family: var(--font-archivo-bold), sans-serif;
-  color: var(--font);
+  color: var(--accent);
   margin: 0;
 }
 
@@ -407,6 +394,11 @@ P {
   border-color: color-mix(in srgb, var(--font) 45%, transparent);
 }
 
+.projectLink.comingSoon {
+  opacity: 0.45;
+  cursor: default;
+}
+
 .arrow,
 .codeIcon {
   font-size: 1rem;
@@ -438,8 +430,8 @@ P {
   .textContainer {
     width: 100%;
     max-width: 42rem;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .heading1 {
@@ -447,8 +439,8 @@ P {
   }
 
   .paragraphContainer {
-    max-width: 35rem;
-    text-align: justify;
+    max-width: 100%;
+    text-align: left;
   }
 
   .imageContainer {

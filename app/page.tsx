@@ -15,7 +15,7 @@ const projects = [
       'Google Maps',
     ],
     image: '/images/psychotherapy-website.jpg',
-    liveUrl: 'https://example.com',
+    liveUrl: 'https://psychtherapie-rusch.at',
     codeUrl: '',
     featured: false,
   },
@@ -46,7 +46,7 @@ const projects = [
       'GPT-powered content assistant with custom templates and SEO optimization',
     tags: ['Next.js', 'OpenAI', 'TailwindCSS'],
     image: '/images/project3.jpg',
-    liveUrl: 'https://example.com',
+    liveUrl: 'https://whyem.com',
     codeUrl: 'https://github.com/yourusername/project3',
     featured: false,
   },
@@ -134,24 +134,32 @@ export default function Home() {
                   </div>
 
                   <div className="projectLinks">
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="projectLink primary"
-                    >
-                      <span>View Live</span>
-                      <span className="arrow">→</span>
-                    </a>
-                    <a
-                      href={project.codeUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="projectLink secondary"
-                    >
-                      <span>Source</span>
-                      <span className="codeIcon">{'</>'}</span>
-                    </a>
+                    {project.liveUrl ? (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="projectLink primary"
+                      >
+                        <span>View Live</span>
+                        <span className="arrow">→</span>
+                      </a>
+                    ) : (
+                      <span className="projectLink primary comingSoon">
+                        <span>Coming Soon</span>
+                      </span>
+                    )}
+                    {project.codeUrl && (
+                      <a
+                        href={project.codeUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="projectLink secondary"
+                      >
+                        <span>Source</span>
+                        <span className="codeIcon">{'</>'}</span>
+                      </a>
+                    )}
                   </div>
                 </div>
               </article>
