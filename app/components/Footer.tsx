@@ -1,39 +1,56 @@
 export default function Footer() {
   return (
     <footer className="footer" id="contact">
-      <div className="footerInner">
-        <div className="footerHeading">
-          <span className="synComment">{'// '}</span>
-          <span className="footerHeadingText">let&apos;s connect</span>
+      <div className="ctaSection">
+        <div className="ctaInner">
+          <span className="sectionLabel">[ DEPLOYMENT_READY ]</span>
+          <h2 className="ctaHeading">
+            READY TO BUILD
+            <br />
+            SOMETHING GREAT?
+          </h2>
+          <p className="ctaDescription">
+            Currently accepting new projects and collaborations.
+            Let&apos;s build something that works beautifully.
+          </p>
+
+          <div className="ctaActions">
+            <a href="mailto:work@sebastianspeiser.com" className="btnPrimary">
+              ESTABLISH_CONNECTION
+            </a>
+            <a
+              href="https://github.com/5ebi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btnSecondary"
+            >
+              VIEW_GITHUB
+            </a>
+          </div>
         </div>
+      </div>
 
-        <p className="footerDescription">
-          Currently open to new opportunities. Whether you have a project in
-          mind or just want to say hi, my inbox is always open.
-        </p>
-
-        <div className="footerLinks">
-          <a href="mailto:sebastian.speiser@outlook.com" className="footerLink">
-            <span className="footerLinkLabel">email</span>
-            <span className="footerLinkValue">sebastian.speiser@outlook.com</span>
-          </a>
-          <a
-            href="https://github.com/5ebi"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footerLink"
-          >
-            <span className="footerLinkLabel">github</span>
-            <span className="footerLinkValue">github.com/5ebi</span>
-          </a>
-        </div>
-
-        <div className="footerBottom">
+      <div className="footerBottom">
+        <div className="footerBottomInner">
           <span className="footerCopy">
-            &copy; {new Date().getFullYear()} Sebastian Speiser
+            &copy; {new Date().getFullYear()} SEBASTIAN_SPEISER // ALL_RIGHTS_RESERVED
           </span>
-          <span className="footerBuiltWith">
-            Built with Next.js + TypeScript
+          <div className="footerLinks">
+            <a
+              href="https://github.com/5ebi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footerLink"
+            >
+              GITHUB
+            </a>
+            <a href="mailto:work@sebastianspeiser.com" className="footerLink">
+              EMAIL
+            </a>
+          </div>
+          <span className="footerStatus">
+            <span className="statusDot" />
+            SYSTEM_STABLE
           </span>
         </div>
       </div>
