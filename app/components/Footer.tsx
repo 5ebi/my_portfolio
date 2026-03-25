@@ -1,42 +1,46 @@
+'use client';
+
+import { useApp } from './ThemeProvider';
+import { t } from '../translations';
+
 export default function Footer() {
+  const { lang } = useApp();
+
   return (
-    <footer className="footer" id="contact">
-      <div className="footerInner">
-        <div className="footerHeading">
-          <span className="synComment">{'// '}</span>
-          <span className="footerHeadingText">let&apos;s connect</span>
+    <>
+      {/* Contact CTA */}
+      <section id="contact" className="contact">
+        <div className="container">
+          <div className="sectionLabel">{t.contact.label[lang]}</div>
+          <div className="contactCard">
+            <h2 className="contactHeading">{t.contact.heading[lang]}</h2>
+            <p className="contactSub">{t.contact.subtitle[lang]}</p>
+            <a href="mailto:work@sebastianspeiser.com" className="contactBtn">
+              {t.contact.btn[lang]}
+              <span>&rarr;</span>
+            </a>
+          </div>
         </div>
+      </section>
 
-        <p className="footerDescription">
-          Currently open to new opportunities. Whether you have a project in
-          mind or just want to say hi, my inbox is always open.
-        </p>
-
-        <div className="footerLinks">
-          <a href="mailto:sebastian.speiser@outlook.com" className="footerLink">
-            <span className="footerLinkLabel">email</span>
-            <span className="footerLinkValue">sebastian.speiser@outlook.com</span>
-          </a>
-          <a
-            href="https://github.com/5ebi"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footerLink"
-          >
-            <span className="footerLinkLabel">github</span>
-            <span className="footerLinkValue">github.com/5ebi</span>
-          </a>
+      {/* Footer */}
+      <footer className="footer">
+        <div className="container">
+          <div className="footerInner">
+            <div className="footerLinks">
+              <a href="https://github.com/5ebi" target="_blank" rel="noopener noreferrer" className="footerLink">
+                GitHub
+              </a>
+              <a href="mailto:work@sebastianspeiser.com" className="footerLink">
+                Email
+              </a>
+            </div>
+            <span className="footerCopy">
+              &copy; {new Date().getFullYear()} Sebastian Speiser &middot; {t.footer.copy[lang]}
+            </span>
+          </div>
         </div>
-
-        <div className="footerBottom">
-          <span className="footerCopy">
-            &copy; {new Date().getFullYear()} Sebastian Speiser
-          </span>
-          <span className="footerBuiltWith">
-            Built with Next.js + TypeScript
-          </span>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 }
