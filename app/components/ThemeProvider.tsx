@@ -22,12 +22,12 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
   useEffect(() => { document.documentElement.lang = lang; }, [lang]);
 
   return (
-    <Ctx value={{
+    <Ctx.Provider value={{
       theme, lang,
       toggleTheme: () => setTheme(t => t === 'dark' ? 'light' : 'dark'),
       toggleLang: () => setLang(l => l === 'en' ? 'de' : 'en'),
     }}>
       {children}
-    </Ctx>
+    </Ctx.Provider>
   );
 }

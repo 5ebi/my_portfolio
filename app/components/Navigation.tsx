@@ -64,7 +64,7 @@ export default function Navigation() {
       </nav>
 
       {/* Mobile Bottom Nav */}
-      <div className="mobileNav">
+      <nav className="mobileNav" aria-label="Mobile navigation">
         <div className="mobileNavInner">
           <a href="#projects" className="mobileNavLink">
             <span className="mobileNavIcon">&#9638;</span>
@@ -79,7 +79,7 @@ export default function Navigation() {
             <span className="mobileNavLabel">{t.nav.contact[lang]}</span>
           </a>
         </div>
-      </div>
+      </nav>
     </>
   );
 }

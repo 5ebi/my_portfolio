@@ -1,5 +1,6 @@
 'use client';
 
+import { t } from '../translations';
 import type { Lang } from '../translations';
 
 interface Project {
@@ -14,7 +15,7 @@ interface Project {
 
 export default function ProjectCard({ project, lang }: { project: Project; lang: Lang }) {
   return (
-    <div className="projectCard">
+    <article className="projectCard">
       <div className="projectBrowser">
         <span className="projectBrowserDot codeDotRed" />
         <span className="projectBrowserDot codeDotYellow" />
@@ -35,18 +36,18 @@ export default function ProjectCard({ project, lang }: { project: Project; lang:
         <div className="projectLinks">
           {project.liveUrl && (
             <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="projectLink">
-              {lang === 'en' ? 'View live' : 'Live ansehen'}
+              {t.projects.viewLive[lang]}
               <span className="projectLinkArrow">&rarr;</span>
             </a>
           )}
           {project.codeUrl && (
             <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" className="projectLink">
-              {lang === 'en' ? 'Source' : 'Quellcode'}
+              {t.projects.source[lang]}
               <span className="projectLinkArrow">&rarr;</span>
             </a>
           )}
         </div>
       </div>
-    </div>
+    </article>
   );
 }
