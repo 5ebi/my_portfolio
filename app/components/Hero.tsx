@@ -17,7 +17,17 @@ export default function Hero() {
               {t.hero.status[lang]}
             </div>
 
-            <h1 className="heroName">Sebastian Speiser</h1>
+            <div className="heroNameRow">
+              <h1 className="heroName">Sebastian Speiser</h1>
+              <Image
+                src="/images/profile.webp"
+                alt="Sebastian Speiser"
+                width={56}
+                height={56}
+                className="heroAvatar"
+                priority
+              />
+            </div>
             <p className="heroRole">Frontend Developer</p>
             <p className="heroDesc">{t.hero.subtitle[lang]}</p>
 
@@ -30,17 +40,6 @@ export default function Hero() {
                 {t.hero.work[lang]}
               </a>
             </div>
-          </div>
-
-          <div className="heroImageWrap">
-            <Image
-              src="/images/profile.webp"
-              alt="Sebastian Speiser"
-              width={200}
-              height={200}
-              className="heroImage"
-              priority
-            />
           </div>
         </div>
 

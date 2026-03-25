@@ -48,7 +48,7 @@ export const t = {
         de: 'Moderne, schnelle und SEO-fokussierte Webseite, die Vertrauen aufbaut und lokale Sichtbarkeit verbessert.',
       },
       tags: ['Next.js', 'TypeScript', 'React', 'SEO'],
-      liveUrl: 'https://psychtherapie-rusch.at',
+      liveUrl: 'https://psychotherapie-rusch.com',
       codeUrl: '',
       status: { en: 'Live', de: 'Live' },
     },
@@ -66,10 +66,10 @@ export const t = {
     },
     {
       id: 3,
-      title: { en: 'AI Content Generator', de: 'KI Content Generator' },
+      title: { en: 'whyem', de: 'whyem' },
       description: {
-        en: 'GPT-powered content assistant with custom templates and SEO optimization.',
-        de: 'GPT-basierter Content-Assistent mit individuellen Vorlagen und SEO-Optimierung.',
+        en: 'AI-powered content platform with custom templates and SEO optimization tools.',
+        de: 'KI-gestützte Content-Plattform mit individuellen Vorlagen und SEO-Optimierungstools.',
       },
       tags: ['Next.js', 'OpenAI', 'TailwindCSS'],
       liveUrl: 'https://whyem.com',

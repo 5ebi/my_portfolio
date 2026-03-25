@@ -17,6 +17,11 @@ const archivoRegular = localFont({
   variable: '--font-archivo-regular',
 });
 
+const archivoSemiBold = localFont({
+  src: '../public/fonts/Archivo-SemiBold.woff2',
+  variable: '--font-archivo-semibold',
+});
+
 export const metadata: Metadata = {
   title: 'Sebastian Speiser / Web Developer Portfolio',
   description:
@@ -59,7 +64,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${archivoBold.variable} ${archivoMedium.variable} ${archivoRegular.variable}`}
+        className={`${archivoBold.variable} ${archivoMedium.variable} ${archivoRegular.variable} ${archivoSemiBold.variable}`}
       >
         {children}
       </body>
