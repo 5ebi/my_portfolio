@@ -1,50 +1,33 @@
 'use client';
 
-import {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-  type ReactNode,
-} from 'react';
+import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
 import type { Lang } from '../translations';
 
-interface ThemeContextType {
-  theme: 'dark' | 'light';
+type Theme = 'dark' | 'light';
+
+const Ctx = createContext<{
+  theme: Theme;
   lang: Lang;
   toggleTheme: () => void;
   toggleLang: () => void;
-}
+}>({ theme: 'dark', lang: 'en', toggleTheme: () => {}, toggleLang: () => {} });
 
-const ThemeContext = createContext<ThemeContextType>({
-  theme: 'dark',
-  lang: 'en',
-  toggleTheme: () => {},
-  toggleLang: () => {},
-});
-
-export function useTheme() {
-  return useContext(ThemeContext);
-}
+export const useApp = () => useContext(Ctx);
 
 export default function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  const [theme, setTheme] = useState<Theme>('dark');
   const [lang, setLang] = useState<Lang>('en');
 
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
-
-  useEffect(() => {
-    document.documentElement.setAttribute('lang', lang);
-  }, [lang]);
-
-  const toggleTheme = () => setTheme((t) => (t === 'dark' ? 'light' : 'dark'));
-  const toggleLang = () => setLang((l) => (l === 'en' ? 'de' : 'en'));
+  useEffect(() => { document.documentElement.setAttribute('data-theme', theme); }, [theme]);
+  useEffect(() => { document.documentElement.lang = lang; }, [lang]);
 
   return (
-    <ThemeContext value={{ theme, lang, toggleTheme, toggleLang }}>
+    <Ctx.Provider value={{
+      theme, lang,
+      toggleTheme: () => setTheme(t => t === 'dark' ? 'light' : 'dark'),
+      toggleLang: () => setLang(l => l === 'en' ? 'de' : 'en'),
+    }}>
       {children}
-    </ThemeContext>
+    </Ctx.Provider>
   );
 }

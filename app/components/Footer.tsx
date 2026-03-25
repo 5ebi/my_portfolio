@@ -1,64 +1,46 @@
 'use client';
 
-import { useTheme } from './ThemeProvider';
-import { translations } from '../translations';
+import { useApp } from './ThemeProvider';
+import { t } from '../translations';
 
 export default function Footer() {
-  const { lang } = useTheme();
-  const t = translations.footer;
+  const { lang } = useApp();
 
   return (
-    <footer className="footer" id="contact">
-      <div className="ctaSection">
-        <div className="ctaInner">
-          <span className="sectionLabel">{t.sectionLabel[lang]}</span>
-          <h2 className="ctaHeading">
-            {t.heading1[lang]}
-            <br />
-            {t.heading2[lang]}
-          </h2>
-          <p className="ctaDescription">{t.description[lang]}</p>
-
-          <div className="ctaActions">
-            <a href="mailto:work@sebastianspeiser.com" className="btnPrimary">
-              {t.btnContact[lang]}
-            </a>
-            <a
-              href="https://github.com/5ebi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btnSecondary"
-            >
-              {t.btnGithub[lang]}
+    <>
+      {/* Contact CTA */}
+      <section id="contact" className="contact">
+        <div className="container">
+          <div className="sectionLabel">{t.contact.label[lang]}</div>
+          <div className="contactCard">
+            <h2 className="contactHeading">{t.contact.heading[lang]}</h2>
+            <p className="contactSub">{t.contact.subtitle[lang]}</p>
+            <a href="mailto:work@sebastianspeiser.com" className="contactBtn">
+              {t.contact.btn[lang]}
+              <span>&rarr;</span>
             </a>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="footerBottom">
-        <div className="footerBottomInner">
-          <span className="footerCopy">
-            &copy; {new Date().getFullYear()} SEBASTIAN_SPEISER // {t.copyright[lang]}
-          </span>
-          <div className="footerLinks">
-            <a
-              href="https://github.com/5ebi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footerLink"
-            >
-              GITHUB
-            </a>
-            <a href="mailto:work@sebastianspeiser.com" className="footerLink">
-              EMAIL
-            </a>
+      {/* Footer */}
+      <footer className="footer">
+        <div className="container">
+          <div className="footerInner">
+            <div className="footerLinks">
+              <a href="https://github.com/5ebi" target="_blank" rel="noopener noreferrer" className="footerLink">
+                GitHub
+              </a>
+              <a href="mailto:work@sebastianspeiser.com" className="footerLink">
+                Email
+              </a>
+            </div>
+            <span className="footerCopy">
+              &copy; {new Date().getFullYear()} Sebastian Speiser &middot; {t.footer.copy[lang]}
+            </span>
           </div>
-          <span className="footerStatus">
-            <span className="statusDot" />
-            {t.systemStable[lang]}
-          </span>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 }

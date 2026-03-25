@@ -1,112 +1,88 @@
 export type Lang = 'en' | 'de';
 
-export const translations = {
+export const t = {
   nav: {
-    projects: { en: 'PROJECTS', de: 'PROJEKTE' },
-    techStack: { en: 'TECH_STACK', de: 'TECH_STACK' },
-    contact: { en: 'CONTACT', de: 'KONTAKT' },
+    projects: { en: 'Projects', de: 'Projekte' },
+    stack: { en: 'Stack', de: 'Stack' },
+    contact: { en: 'Contact', de: 'Kontakt' },
   },
   hero: {
-    status: {
-      en: 'STATUS: OPEN_FOR_COLLABORATION',
-      de: 'STATUS: OFFEN_FÜR_ZUSAMMENARBEIT',
+    status: { en: 'Available for work', de: 'Verfügbar für Projekte' },
+    subtitle: {
+      en: "I'm a frontend developer with a strong focus on clean UI, usability, and modern web technologies. I enjoy turning complex ideas into simple, intuitive digital experiences.",
+      de: 'Ich bin Frontend-Entwickler mit starkem Fokus auf saubere UI, Benutzerfreundlichkeit und moderne Web-Technologien. Ich verwandle komplexe Ideen gerne in einfache, intuitive digitale Erlebnisse.',
     },
-    description: {
-      en: 'Frontend developer specializing in ',
-      de: 'Frontend-Entwickler spezialisiert auf ',
-    },
-    descriptionStrong: {
-      en: 'clean, high-performance interfaces',
-      de: 'saubere, performante Interfaces',
-    },
-    descriptionEnd: {
-      en: ' and modern web technologies. Building digital infrastructure that prioritizes usability over complexity.',
-      de: ' und moderne Web-Technologien. Digitale Infrastruktur, die Benutzerfreundlichkeit über Komplexität stellt.',
-    },
-    btnContact: { en: 'INITIALIZE_CONTACT', de: 'KONTAKT_AUFNEHMEN' },
-    btnProjects: { en: 'VIEW_PROJECTS', de: 'PROJEKTE_ANSEHEN' },
-    yearsExp: { en: 'YEARS_EXP', de: 'JAHRE_ERF' },
+    cta: { en: 'Get in touch', de: 'Kontakt aufnehmen' },
+    work: { en: 'View work', de: 'Projekte ansehen' },
   },
   projects: {
-    sectionLabel: { en: '[ SELECTED_WORKS ]', de: '[ AUSGEWÄHLTE_ARBEITEN ]' },
-    heading1: { en: 'ENGINEERED', de: 'ENTWICKELTE' },
-    heading2: { en: 'SOLUTIONS', de: 'LÖSUNGEN' },
+    label: { en: 'Selected Work', de: 'Ausgewählte Arbeiten' },
+    viewLive: { en: 'View live', de: 'Live ansehen' },
+    source: { en: 'Source', de: 'Quellcode' },
+    comingSoon: { en: 'Coming soon', de: 'Demnächst' },
   },
-  projectCard: {
-    viewLive: { en: 'VIEW_LIVE', de: 'LIVE_ANSEHEN' },
-    comingSoon: { en: 'COMING_SOON', de: 'DEMNÄCHST' },
-    sourceCode: { en: 'SOURCE_CODE', de: 'QUELLCODE' },
+  stack: {
+    label: { en: 'Technical Proficiencies', de: 'Technische Fähigkeiten' },
+  },
+  contact: {
+    label: { en: 'Initiate Collaboration', de: 'Zusammenarbeit starten' },
+    heading: {
+      en: "Let's build something great together.",
+      de: 'Lass uns gemeinsam etwas Großartiges bauen.',
+    },
+    subtitle: {
+      en: 'Currently accepting new projects and collaborations.',
+      de: 'Aktuell offen für neue Projekte und Zusammenarbeit.',
+    },
+    btn: { en: 'Send message', de: 'Nachricht senden' },
+  },
+  footer: {
+    copy: { en: 'Designed for performance', de: 'Designed für Performance' },
   },
   projectData: [
     {
       id: 1,
-      title: {
-        en: 'Psychotherapy Practice Website',
-        de: 'Psychotherapie Praxis Webseite',
-      },
+      title: { en: 'Psychotherapy Practice', de: 'Psychotherapie Praxis' },
       description: {
-        en: 'Modern, fast, and SEO-focused website for a psychotherapy practice. Designed to build trust and improve local visibility.',
-        de: 'Moderne, schnelle und SEO-fokussierte Webseite für eine Psychotherapiepraxis. Entwickelt um Vertrauen aufzubauen und lokale Sichtbarkeit zu verbessern.',
+        en: 'Modern, fast, and SEO-focused website designed to build trust and improve local visibility.',
+        de: 'Moderne, schnelle und SEO-fokussierte Webseite, die Vertrauen aufbaut und lokale Sichtbarkeit verbessert.',
       },
-      tags: ['Next.js', 'TypeScript', 'React', 'SEO', 'Responsive Design', 'Google Maps'],
-      image: '/images/psychotherapy-website.jpg',
-      liveUrl: 'https://psychtherapie-rusch.at',
+      tags: ['Next.js', 'TypeScript', 'React', 'SEO'],
+      liveUrl: 'https://psychotherapie-rusch.com',
       codeUrl: '',
-      category: { en: 'CLIENT_PROJECT', de: 'KUNDENPROJEKT' },
+      status: { en: 'Live', de: 'Live' },
     },
     {
       id: 2,
-      title: {
-        en: 'Paw Match',
-        de: 'Paw Match',
-      },
+      title: { en: 'Paw Match', de: 'Paw Match' },
       description: {
-        en: 'Mobile app that helps dog owners discover and connect with compatible dogs nearby. Full-stack with REST API.',
-        de: 'Mobile App die Hundebesitzern hilft, kompatible Hunde in der Nähe zu entdecken und sich zu vernetzen. Full-Stack mit REST API.',
+        en: 'Mobile app that helps dog owners discover and connect with compatible dogs nearby.',
+        de: 'Mobile App, die Hundebesitzern hilft, kompatible Hunde in der Nähe zu finden.',
       },
-      tags: ['React Native', 'Expo', 'TypeScript', 'Node.js', 'PostgreSQL', 'REST API', 'Zod'],
-      image: '/images/paw-match.jpg',
+      tags: ['React Native', 'Expo', 'TypeScript', 'Node.js', 'PostgreSQL'],
       liveUrl: '',
       codeUrl: 'https://github.com/5ebi/finalproject-fall-2024-atvie',
-      category: { en: 'MOBILE_APP', de: 'MOBILE_APP' },
+      status: { en: 'In progress', de: 'In Entwicklung' },
     },
     {
       id: 3,
-      title: {
-        en: 'AI Content Generator',
-        de: 'KI Content Generator',
-      },
+      title: { en: 'whyem', de: 'whyem' },
       description: {
-        en: 'GPT-powered content assistant with custom templates and SEO optimization for efficient content creation.',
-        de: 'GPT-basierter Content-Assistent mit individuellen Vorlagen und SEO-Optimierung für effiziente Inhaltserstellung.',
+        en: 'AI-powered content platform with custom templates and SEO optimization tools.',
+        de: 'KI-gestützte Content-Plattform mit individuellen Vorlagen und SEO-Optimierungstools.',
       },
       tags: ['Next.js', 'OpenAI', 'TailwindCSS'],
-      image: '/images/project3.jpg',
       liveUrl: 'https://whyem.com',
       codeUrl: '',
-      category: { en: 'SAAS_TOOL', de: 'SAAS_TOOL' },
+      status: { en: 'Live', de: 'Live' },
     },
   ],
-  stack: {
-    sectionLabel: { en: '[ TECH_CAPABILITIES ]', de: '[ TECH_FÄHIGKEITEN ]' },
-    heading1: { en: 'ENGINEERING', de: 'ENGINEERING' },
-    heading2: { en: 'STACK', de: 'STACK' },
-    description: {
-      en: 'A focused selection of technologies optimized for performance, developer experience, and shipping fast.',
-      de: 'Eine fokussierte Auswahl an Technologien, optimiert für Performance, Entwicklererfahrung und schnelle Auslieferung.',
-    },
-  },
-  footer: {
-    sectionLabel: { en: '[ DEPLOYMENT_READY ]', de: '[ BEREIT_ZUM_EINSATZ ]' },
-    heading1: { en: 'READY TO BUILD', de: 'BEREIT ETWAS' },
-    heading2: { en: 'SOMETHING GREAT?', de: 'GROSSES ZU BAUEN?' },
-    description: {
-      en: "Currently accepting new projects and collaborations. Let's build something that works beautifully.",
-      de: 'Aktuell offen für neue Projekte und Zusammenarbeit. Lass uns etwas bauen, das wunderbar funktioniert.',
-    },
-    btnContact: { en: 'ESTABLISH_CONNECTION', de: 'VERBINDUNG_HERSTELLEN' },
-    btnGithub: { en: 'VIEW_GITHUB', de: 'GITHUB_ANSEHEN' },
-    copyright: { en: 'ALL_RIGHTS_RESERVED', de: 'ALLE_RECHTE_VORBEHALTEN' },
-    systemStable: { en: 'SYSTEM_STABLE', de: 'SYSTEM_STABIL' },
-  },
+  skills: [
+    { name: 'React / Next.js', level: 90 },
+    { name: 'TypeScript', level: 88 },
+    { name: 'HTML / CSS', level: 92 },
+    { name: 'React Native / Expo', level: 80 },
+    { name: 'Node.js', level: 75 },
+    { name: 'PostgreSQL', level: 70 },
+  ],
 } as const;
