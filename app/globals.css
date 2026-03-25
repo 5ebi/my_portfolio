@@ -168,8 +168,8 @@ ul, ol { list-style: none; }
 .navLogo {
   font-family: var(--font-sans);
   font-weight: 600;
-  font-size: 14px;
-  letter-spacing: -0.2px;
+  font-size: 15px;
+  letter-spacing: -0.3px;
   color: var(--text-primary);
   transition: color 0.2s;
 }
@@ -341,11 +341,11 @@ ul, ol { list-style: none; }
 }
 
 .heroAvatar {
-  width: 72px;
-  height: 72px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--border-subtle);
+  border: 3px solid var(--border-subtle);
   box-shadow: 0 0 0 4px var(--accent-dim);
   flex-shrink: 0;
 }
@@ -896,8 +896,8 @@ ul, ol { list-style: none; }
   }
 
   .heroAvatar {
-    width: 88px;
-    height: 88px;
+    width: 110px;
+    height: 110px;
   }
 
   .heroRole {
@@ -970,8 +970,8 @@ ul, ol { list-style: none; }
   }
 
   .heroAvatar {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
   }
 
   .heroRole {

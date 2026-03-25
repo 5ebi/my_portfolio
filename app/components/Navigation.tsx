@@ -12,7 +12,7 @@ export default function Navigation() {
       <nav className="nav">
         <div className="navInner">
           <Link href="/" className="navLogo">
-            <span className="navLogoAccent">SEBASTIAN</span>SPEISER
+            <span className="navLogoAccent">sebastian</span>speiser.com
           </Link>
 
           <div className="navLinks">

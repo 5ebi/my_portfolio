@@ -18,18 +18,18 @@ export default function Hero() {
             </div>
 
             <div className="heroNameRow">
-              <Image
-                src="/images/profile.webp"
-                alt="Sebastian Speiser"
-                width={80}
-                height={80}
-                className="heroAvatar"
-                priority
-              />
               <div>
                 <h1 className="heroName">Sebastian</h1>
                 <h1 className="heroName">Speiser</h1>
               </div>
+              <Image
+                src="/images/profile.webp"
+                alt="Sebastian Speiser"
+                width={120}
+                height={120}
+                className="heroAvatar"
+                priority
+              />
             </div>
             <p className="heroRole">Frontend Developer &mdash; Austria</p>
             <p className="heroDesc">{t.hero.subtitle[lang]}</p>
