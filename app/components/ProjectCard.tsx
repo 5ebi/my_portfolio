@@ -20,9 +20,26 @@ export default function ProjectCard({ project, lang }: { project: Project; lang:
         <span className="projectBrowserDot codeDotRed" />
         <span className="projectBrowserDot codeDotYellow" />
         <span className="projectBrowserDot codeDotGreen" />
+        {project.liveUrl && (
+          <span className="projectBrowserUrl">
+            {project.liveUrl.replace('https://', '')}
+          </span>
+        )}
       </div>
       <div className="projectPreview">
-        <span className="projectPreviewText">{project.title[lang]}</span>
+        {project.liveUrl ? (
+          <div className="projectIframeWrap">
+            <iframe
+              src={project.liveUrl}
+              className="projectIframe"
+              title={project.title[lang]}
+              loading="lazy"
+              sandbox="allow-scripts allow-same-origin"
+            />
+          </div>
+        ) : (
+          <span className="projectPreviewText">{project.title[lang]}</span>
+        )}
       </div>
       <div className="projectBody">
         <div className="projectStatus">{project.status[lang]}</div>

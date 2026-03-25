@@ -48,7 +48,7 @@ export const t = {
         de: 'Moderne, schnelle und SEO-fokussierte Webseite, die Vertrauen aufbaut und lokale Sichtbarkeit verbessert.',
       },
       tags: ['Next.js', 'TypeScript', 'React', 'SEO'],
-      liveUrl: 'https://psychotherapie-rusch.com',
+      liveUrl: 'https://psychotherapie-rusch.at',
       codeUrl: '',
       status: { en: 'Live', de: 'Live' },
     },

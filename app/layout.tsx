@@ -1,26 +1,5 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import localFont from 'next/font/local';
-
-const archivoBold = localFont({
-  src: '../public/fonts/Archivo-Bold.woff2',
-  variable: '--font-archivo-bold',
-});
-
-const archivoMedium = localFont({
-  src: '../public/fonts/Archivo-Medium.woff2',
-  variable: '--font-archivo-medium',
-});
-
-const archivoRegular = localFont({
-  src: '../public/fonts/Archivo-Regular.woff2',
-  variable: '--font-archivo-regular',
-});
-
-const archivoSemiBold = localFont({
-  src: '../public/fonts/Archivo-SemiBold.woff2',
-  variable: '--font-archivo-semibold',
-});
 
 export const metadata: Metadata = {
   title: 'Sebastian Speiser / Web Developer Portfolio',
@@ -63,9 +42,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${archivoBold.variable} ${archivoMedium.variable} ${archivoRegular.variable} ${archivoSemiBold.variable}`}
-      >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body>
         {children}
       </body>
     </html>

@@ -39,10 +39,7 @@
   --radius-xl: 20px;
 
   /* Fonts */
-  --font-sans: var(--font-archivo-regular), system-ui, -apple-system, sans-serif;
-  --font-sans-medium: var(--font-archivo-medium), system-ui, sans-serif;
-  --font-sans-semibold: var(--font-archivo-semibold), system-ui, sans-serif;
-  --font-sans-bold: var(--font-archivo-bold), system-ui, sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'SF Mono', 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
 
   /* Spacing */
@@ -169,7 +166,8 @@ ul, ol { list-style: none; }
 }
 
 .navLogo {
-  font-family: var(--font-sans-semibold);
+  font-family: var(--font-sans);
+  font-weight: 600;
   font-size: 14px;
   letter-spacing: -0.2px;
   color: var(--text-primary);
@@ -187,7 +185,8 @@ ul, ol { list-style: none; }
 }
 
 .navLink {
-  font-family: var(--font-sans-medium);
+  font-family: var(--font-sans);
+  font-weight: 500;
   font-size: 13px;
   color: var(--text-secondary);
   letter-spacing: -0.1px;
@@ -221,7 +220,8 @@ ul, ol { list-style: none; }
 }
 
 .navToggleLang {
-  font-family: var(--font-sans-medium);
+  font-family: var(--font-sans);
+  font-weight: 500;
   font-size: 12px;
   letter-spacing: 0.5px;
 }
@@ -284,7 +284,8 @@ ul, ol { list-style: none; }
 }
 
 .mobileNavLabel {
-  font-family: var(--font-sans-medium);
+  font-family: var(--font-sans);
+  font-weight: 500;
   font-size: 10px;
   letter-spacing: 0.3px;
 }
@@ -294,7 +295,8 @@ ul, ol { list-style: none; }
    ======================================== */
 
 .sectionLabel {
-  font-family: var(--font-sans-medium);
+  font-family: var(--font-sans);
+  font-weight: 500;
   font-size: 12px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -303,7 +305,8 @@ ul, ol { list-style: none; }
 }
 
 .sectionTitle {
-  font-family: var(--font-sans-bold);
+  font-family: var(--font-sans);
+  font-weight: 700;
   font-size: 28px;
   line-height: 1.2;
   letter-spacing: -0.5px;
@@ -350,7 +353,8 @@ ul, ol { list-style: none; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-sans-medium);
+  font-family: var(--font-sans);
+  font-weight: 500;
   font-size: 13px;
   color: var(--accent);
   margin-bottom: 24px;
@@ -374,7 +378,8 @@ ul, ol { list-style: none; }
 }
 
 .heroName {
-  font-family: var(--font-sans-bold);
+  font-family: var(--font-sans);
+  font-weight: 700;
   font-size: 40px;
   line-height: 1.05;
   letter-spacing: -1.5px;
@@ -382,7 +387,8 @@ ul, ol { list-style: none; }
 }
 
 .heroRole {
-  font-family: var(--font-sans-medium);
+  font-family: var(--font-sans);
+  font-weight: 500;
   font-size: 16px;
   color: var(--text-secondary);
   margin-bottom: 20px;
@@ -406,7 +412,8 @@ ul, ol { list-style: none; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-sans-medium);
+  font-family: var(--font-sans);
+  font-weight: 500;
   font-size: 14px;
   padding: 10px 20px;
   border-radius: var(--radius-md);
@@ -429,7 +436,8 @@ ul, ol { list-style: none; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-sans-medium);
+  font-family: var(--font-sans);
+  font-weight: 500;
   font-size: 14px;
   padding: 10px 20px;
   border-radius: var(--radius-md);
@@ -566,12 +574,43 @@ ul, ol { list-style: none; }
   border-radius: 50%;
 }
 
+.projectBrowserUrl {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-tertiary);
+  margin-left: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .projectPreview {
-  height: 140px;
+  height: 200px;
   background: linear-gradient(145deg, var(--bg-elevated), var(--bg-hover));
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.projectIframeWrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.projectIframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1280px;
+  height: 800px;
+  border: none;
+  transform: scale(0.25);
+  transform-origin: top left;
+  pointer-events: none;
 }
 
 .projectPreviewText {
@@ -586,7 +625,8 @@ ul, ol { list-style: none; }
 }
 
 .projectStatus {
-  font-family: var(--font-sans-medium);
+  font-family: var(--font-sans);
+  font-weight: 500;
   font-size: 11px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -595,7 +635,8 @@ ul, ol { list-style: none; }
 }
 
 .projectTitle {
-  font-family: var(--font-sans-semibold);
+  font-family: var(--font-sans);
+  font-weight: 600;
   font-size: 18px;
   letter-spacing: -0.3px;
   color: var(--text-primary);
@@ -636,7 +677,8 @@ ul, ol { list-style: none; }
 }
 
 .projectLink {
-  font-family: var(--font-sans-medium);
+  font-family: var(--font-sans);
+  font-weight: 500;
   font-size: 13px;
   color: var(--accent);
   display: inline-flex;
@@ -685,7 +727,8 @@ ul, ol { list-style: none; }
 }
 
 .stackName {
-  font-family: var(--font-sans-medium);
+  font-family: var(--font-sans);
+  font-weight: 500;
   font-size: 14px;
   color: var(--text-primary);
 }
@@ -728,7 +771,8 @@ ul, ol { list-style: none; }
 }
 
 .contactHeading {
-  font-family: var(--font-sans-bold);
+  font-family: var(--font-sans);
+  font-weight: 700;
   font-size: 24px;
   letter-spacing: -0.5px;
   color: var(--text-primary);
@@ -747,7 +791,8 @@ ul, ol { list-style: none; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-sans-medium);
+  font-family: var(--font-sans);
+  font-weight: 500;
   font-size: 14px;
   padding: 12px 24px;
   border-radius: var(--radius-md);
@@ -791,7 +836,8 @@ ul, ol { list-style: none; }
 }
 
 .footerLink {
-  font-family: var(--font-sans-medium);
+  font-family: var(--font-sans);
+  font-weight: 500;
   font-size: 13px;
   color: var(--text-secondary);
   transition: color 0.15s;
