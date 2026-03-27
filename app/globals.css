@@ -567,21 +567,24 @@ ul, ol { list-style: none; }
 .projectsGrid {
   display: flex;
   flex-direction: column;
-  gap: 1px;
-  border: 1px solid var(--border-subtle);
-  background: var(--border-subtle);
+  gap: 24px;
 }
 
 .projectCard {
   background: var(--bg-card);
-  border-radius: 0;
-  border: none;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
   overflow: hidden;
-  transition: background 0.2s;
+  transition: background 0.2s, border-color 0.2s;
 }
 
 .projectCard:hover {
   background: var(--bg-elevated);
+  border-color: rgba(245, 245, 220, 0.18);
+}
+
+[data-theme='light'] .projectCard:hover {
+  border-color: rgba(10, 31, 20, 0.18);
 }
 
 .projectBrowser {
@@ -991,9 +994,7 @@ ul, ol { list-style: none; }
   }
 
   .projectsGrid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1px;
+    gap: 32px;
   }
 
   .stackGrid {
