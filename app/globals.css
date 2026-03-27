@@ -355,7 +355,6 @@ ul, ol { list-style: none; }
   object-fit: cover;
   object-position: top;
   flex-shrink: 0;
-  border: 1px solid var(--border-subtle);
 }
 
 .heroStatus {
@@ -437,16 +436,10 @@ ul, ol { list-style: none; }
   text-transform: uppercase;
   padding: 12px 22px;
   border-radius: var(--radius-md);
-  background: var(--accent);
-  color: #0a1f14;
-  border: 1px solid var(--accent);
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border: 1px solid var(--text-primary);
   transition: opacity 0.15s, transform 0.1s;
-}
-
-[data-theme='light'] .btnPrimary {
-  color: #f5f5dc;
-  background: var(--accent);
-  border-color: var(--accent);
 }
 
 .btnPrimary:hover {
@@ -854,14 +847,10 @@ ul, ol { list-style: none; }
   text-transform: uppercase;
   padding: 14px 28px;
   border-radius: var(--radius-md);
-  background: var(--accent);
-  color: #0a1f14;
-  border: 1px solid var(--accent);
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border: 1px solid var(--text-primary);
   transition: opacity 0.15s, transform 0.1s;
-}
-
-[data-theme='light'] .contactBtn {
-  color: #f5f5dc;
 }
 
 .contactBtn:hover {
