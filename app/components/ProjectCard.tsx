@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { t } from '../translations';
 import type { Lang } from '../translations';
 
@@ -10,10 +11,34 @@ interface Project {
   readonly tags: readonly string[];
   readonly liveUrl: string;
   readonly codeUrl: string;
+  readonly previewImage?: string;
   readonly status: Readonly<Record<Lang, string>>;
 }
 
 export default function ProjectCard({ project, lang }: { project: Project; lang: Lang }) {
+  const previewContent = project.previewImage ? (
+    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="projectPreviewLink">
+      <Image
+        src={project.previewImage}
+        alt={project.title[lang]}
+        fill
+        className="projectPreviewImg"
+      />
+    </a>
+  ) : project.liveUrl ? (
+    <div className="projectIframeWrap">
+      <iframe
+        src={project.liveUrl}
+        className="projectIframe"
+        title={project.title[lang]}
+        loading="lazy"
+        sandbox="allow-scripts allow-same-origin"
+      />
+    </div>
+  ) : (
+    <span className="projectPreviewText">{project.title[lang]}</span>
+  );
+
   return (
     <article className="projectCard">
       <div className="projectBrowser">
@@ -27,19 +52,7 @@ export default function ProjectCard({ project, lang }: { project: Project; lang:
         )}
       </div>
       <div className="projectPreview">
-        {project.liveUrl ? (
-          <div className="projectIframeWrap">
-            <iframe
-              src={project.liveUrl}
-              className="projectIframe"
-              title={project.title[lang]}
-              loading="lazy"
-              sandbox="allow-scripts allow-same-origin"
-            />
-          </div>
-        ) : (
-          <span className="projectPreviewText">{project.title[lang]}</span>
-        )}
+        {previewContent}
       </div>
       <div className="projectBody">
         <div className="projectStatus">{project.status[lang]}</div>
