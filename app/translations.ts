@@ -74,7 +74,7 @@ export const t = {
       tags: ['Next.js', 'OpenAI', 'TailwindCSS'],
       liveUrl: 'https://whyem.com',
       codeUrl: '',
-      previewImage: '/images/whyem-preview.webp',
+      previewImage: '/images/whyem_screenshot.webp',
       status: { en: 'Live', de: 'Live' },
     },
   ],
